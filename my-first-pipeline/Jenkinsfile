@@ -1,11 +1,9 @@
 pipeline {
-  agent {
-    docker { image 'hello-world' }
-  }
+  agent any
   stages {
-    stage('Run') {
+    stage('Run Hello World') {
       steps {
-        sh 'echo "Hello from inside Docker agent!"'
+        sh 'docker run hello-world'
       }
     }
   }
